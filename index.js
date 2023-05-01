@@ -4,6 +4,10 @@ const cors = require("cors");
 const app = express();
 const PORT = 5000;
 
+app.get("/", (req, res) => {
+  res.send("Food Chef welcome");
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
