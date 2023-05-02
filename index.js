@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const comments = require("./data/comment.json");
+const chefs = require("./data/chef.json");
 
 const app = express();
 const PORT = 5000;
@@ -14,6 +15,10 @@ app.get("/", (req, res) => {
 
 app.get("/comments", (req, res) => {
   res.json(comments);
+});
+
+app.get("/chefs", (req, res) => {
+  res.json(chefs);
 });
 
 app.listen(PORT, () => {
