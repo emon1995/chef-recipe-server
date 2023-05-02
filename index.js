@@ -21,6 +21,12 @@ app.get("/chefs", (req, res) => {
   res.json(chefs);
 });
 
+app.get("/chefs/:id", (req, res) => {
+  const id = req.params.id;
+  const selectedChef = chefs.find((chef) => chef.id === parseInt(id));
+  res.json(selectedChef);
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
