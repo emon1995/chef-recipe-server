@@ -30,7 +30,7 @@ app.get("/chefs/:id", (req, res) => {
 
 app.get("/recipes/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  const selectedRecipe = recipes.filter((recipe) => recipe.id === id);
+  const selectedRecipe = recipes.filter((recipe) => recipe.chefId === id);
   res.json(selectedRecipe);
 });
 
